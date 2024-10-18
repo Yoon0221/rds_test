@@ -20,9 +20,9 @@ jobs:
 
       - name: Copy files to EC2
         run: |
-          scp -o StrictHostKeyChecking=no -r ./build/libs/demo-0.0.1-SNAPSHOT.jar ec2-user@3.38.183.22:~/your-app.jar
+          scp -o StrictHostKeyChecking=no -r ./build/libs/demo-0.0.1-SNAPSHOT.jar ec2-user@13.125.45.19:~/your-app.jar
 
       - name: Restart application
         run: |
-          ssh -o StrictHostKeyChecking=no ec2-user@3.38.183.22 "pkill -f 'java -jar your-app.jar' || true"
-          ssh -o StrictHostKeyChecking=no ec2-user@3.38.183.22 "java -jar ~/your-app.jar &"
+          ssh -o StrictHostKeyChecking=no ec2-user@13.125.45.19 "pkill -f 'java -jar your-app.jar' || true"
+          ssh -o StrictHostKeyChecking=no ec2-user@13.125.45.19 "java -jar ~/your-app.jar &"
