@@ -26,7 +26,7 @@ public class SwaggerConfig {
                         .bearerFormat("JWT"));
 
         return new OpenAPI()
-                .addServersItem(new Server().url("/"))
+                .addServersItem(new Server().url("http://3.38.183.22:8080")) // 실제 URL로 변경
                 .components(components);
     }
 }
